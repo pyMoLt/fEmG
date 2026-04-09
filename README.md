@@ -106,6 +106,6 @@ Ob dieses Verhalten unter Windows oder Linux identisch auftritt, konnte nicht ab
 ## Architekturentscheidungen
 Worauf bei der Implementierung geachtet wurde:
 
-* **Robustheit durch Threading (KI-Empfehlung):** Wegen der beschriebenen macOS-Instabilitäten wurden alle kritischen Bluetooth-Aufrufe (`connect`, `read`) in separate Daemons (Threads) mit Timeouts ausgelagert. Dies war eine KI-gestützte Architektur-Empfehlung, um zu verhindern, dass die Hardware-Verbindung einfriert/instabil wird.
+* **Robustheit durch Threading:** Wegen der beschriebenen macOS-Instabilitäten wurden alle kritischen Bluetooth-Aufrufe (`connect`, `read`) in separate Daemons (Threads) mit Timeouts ausgelagert. Dies war eine KI-gestützte Architektur-Empfehlung, um zu verhindern, dass die Hardware-Verbindung einfriert/instabil wird.
 * **Saubere Module:** Keine Logik-Dopplung. Die GUI weiß nichts vom BITalino, die Hardware weiß nichts von der FFT. Die Klasse `BioFeedback` agiert als klassischer Controller.
-* **Vorlesungsbezug:** Konzepte wie der RMS (Root Mean Square) als Maß für physiologische Kraft oder die Definition der Fenstergrößen der Filter orientieren sich streng an den Vorlesungsinhalten und allgemeinen Bitalino-Referenzen. Die Designentscheidungen und Ergebnisdiskussion findet sich im beiliegenden Beiwerk `docs/AbschlussDoku`.
+* **Vorlesungsbezug:** Konzepte wie der RMS (Root Mean Square) als Maß für physiologische Kraft oder die Definition der Fenstergrößen der Filter orientieren sich streng an den Vorlesungsinhalten und allgemeinen Bitalino-Referenzen. 
